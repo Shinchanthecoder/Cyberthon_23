@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='styles/new_style.css') }}">
+    <style>
+        /* Add this style to hide the X and Y input boxes */
+        .input-box.hidden {
+            display: none;
+        }
+        
+        /* Adjust the title style for better visibility */
+        .title {
+            color: #333; /* Set your preferred text color */
+            font-size: 24px; /* Set your preferred font size */
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+        .input-box.hidden {
+            display: none;
+        }
+
+        .title {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* New class for photo container */
+        .photo-container {
+            margin-bottom: 20px; /* Adjust margin as needed */
+        }
+
+        /* Style for the photo input */
+        input[type="file"] {
+            width: 100%; /* Take up the full width of the container */
+            padding: 10px; /* Add padding for better appearance */
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+        }
+
+        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Criminal Record</div>
+        <form action="{{ url_for('submit') }}" method='post' enctype="multipart/form-data">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class = "details">Full Name</span>
+                    <input type = "text" name = "Name" placeholder = "Enter Name" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Offence</span>
+                    <input type = "text" name = "Offence" placeholder = "Enter Offence" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Location</span>
+                    <input type = "text" name = "Location or Landmark" placeholder = "Enter location" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Date Reported</span>
+                    <input type = "text" name = "Time Reported" placeholder = "Enter Time" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Longitude</span>
+                    <input type = "text" name = "Longitude" placeholder = "Enter longitude" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Latitude</span>
+                    <input type = "text" name = "Latitude" placeholder = "Enter latitude" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Time</span>
+                    <input type = "text" name = "Hour" placeholder = "Enter Date" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Month</span>
+                    <input type = "text" name = "Month" placeholder = "Enter Month" required>
+                </div>
+                <div class="input-box">
+                    <span class = "details">Year</span>
+                    <input type = "text" name = "Year" placeholder = "Enter Year" required>
+                </div>
+                <div class="input-box hidden">
+                    <span class="details"></span>
+                    <input type="hidden" name="X" placeholder="Enter X">
+                </div>
+                <div class="input-box hidden">
+                    <span class="details"></span>
+                    <input type="hidden" name="Y" placeholder="Enter Y">
+                </div>
+                <div class="input-box">
+                    <span class = "details">Neighborhood</span>
+                    <input type = "text" name = "Neighborhood" placeholder = "Enter Neighborhood" required>
+                </div>
+                <div class="photo-container">
+                    <label for="photo">Upload Photo</label><br><br>
+                    <input type="file" name="photo" accept="image/*" enctype="multipart/form-data"><br><br>
+                </div>
+            </div>
+            <div class="button">
+                <input type = "Submit" value="Register">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
